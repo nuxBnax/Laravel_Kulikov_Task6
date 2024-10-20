@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Form</title>
 </head>
+
 <body>
     <div class="add-books__form-wrapper">
         <form action="{{route('store-form')}}" method="post" name="add-new-book" id="add-new-book">
@@ -22,10 +24,14 @@
                     <option value="sci-fi">Sci-Fi</option>
                     <option value="mystery">Mystery</option>
                     <option value="drama">Drama</option>
-                </select>  
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        @foreach ($errors->all() as $error)
+            {{$error}}<br>
+        @endforeach
     </div>
 </body>
+
 </html>
